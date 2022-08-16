@@ -1,9 +1,8 @@
-// import {deleteBooks} from 'modules/deleteBooks.js'
 import getBooks from './modules/getBooks.js';
 import handleremove from './modules/removeBooks.js';
 import showBooks from './modules/showBooks.js';
 import addBooks from './modules/addBook.js';
-import date from './modules/dateDisplay.js';
+import dateDisplay from './modules/dateDisplay.js';
 
 const container = document.querySelector('.container');
 const submit = document.querySelector('#submit');
@@ -42,7 +41,6 @@ submit.addEventListener('click', (e) => {
   e.preventDefault();
   const t = document.querySelector('#title').value;
   const a = document.querySelector('#author').value;
-  // const book = new Book(t, a);
   if (!(t === '' && a === '')) {
     const newBook = {
       title: t,
@@ -52,4 +50,4 @@ submit.addEventListener('click', (e) => {
   }
 });
 
-date();
+setInterval(dateDisplay(), 1000);
